@@ -66,7 +66,6 @@ import fs from 'fs';
         productDelete = producto.splice(indice, 1)[0];
     
     await fs.promises.writeFile(this.path, JSON.stringify(producto))
-    //return  { msg: `El producto fue eliminado`}
     }catch (error){
         console.log(error)
         throw error;
