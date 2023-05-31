@@ -14,9 +14,11 @@ productRouter.get('/', async (req, res) =>{
     let response;
     if (limit){
         response = products.slice(0,limit)
-        res.send(response)
+        // res.send(response)
+        res.render('index', {response})
     }else {
-        res.send(products)
+        // res.send(products)
+        res.render('index', {products})
     }
 })
 
@@ -58,5 +60,7 @@ productRouter.delete('/pid', async (req,res) =>{
     }
         res.send({status: 'success', msg: `Product ${deleteProd.pid} elimined`})
 })
+
+
 
 export default productRouter;
